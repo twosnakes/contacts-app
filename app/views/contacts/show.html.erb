@@ -3,3 +3,10 @@
 <h2>Last Name: <%= @contact.last_name %></h2>
 <h2>Email: <%= @contact.email %></h2>
 <h2>Phone: <%= @contact.phone_number %></h2>
+
+<%= link_to "Delete Contact", "/contacts/#{ @contact.id}", method: :delete %>
+
+
+
+
+
