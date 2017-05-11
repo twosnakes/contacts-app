@@ -14,7 +14,8 @@ class ContactsController < ApplicationController
       first_name: params[:first_name],
       last_name: params[:last_name],
       email: params[:email],
-      phone_number: params[:phone_number]
+      phone_number: params[:phone_number],
+      middle_name: params[:middle_name]
       )
     @contact.save
   end
@@ -24,11 +25,19 @@ class ContactsController < ApplicationController
   end
 
   def edit
-    contact = Contact.find(params[:id])
+    @contact = Contact.find(params[:id])
   end
 
   def update
     contact = Contact.find(params[:id])
+      contact.assign_attributes(
+      first_name: params[:first_name],
+      last_name: params[:last_name],
+      email: params[:email],
+      phone_number: params[:phone_number],
+      middle_name: params[:middle_name]
+      )
+    contact.save
   end
 
   def destroy
